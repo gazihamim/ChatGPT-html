@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- টাইটেল চেঞ্জ করতে হবে -->
+  <title>ChatGPT Sign In</title>
+  <!-- সব সময় লেটেস্ট সিডিএন ইউজ করতে হবে -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- পুরো পেজে "Inter" ফন্ট প্রয়োগ করা হয়েছে -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-white rounded-lg w-3/4 mx-auto ">
-    <img class="w-20 mx-auto mt-5 mb-2" src="ChatGPT-Logo.svg.png" alt="">
-   <h1 class="text-center text-xl font-semibold py-3">Welcome to ChatGPT</h1> 
-   <p class="text-center text-sm">Click the button below to sign in to ChatGPT</p>
-   <button class="bg-black text-white rounded-lg px-3 py-2 w-full mt-4 text-md">Sign to ChatGPT</button>
-   <div class=" text-sm mt-3 mb-30 w-full">
-    <p>if you have any truble with the button, you can copy and paste the link below into your browser:</p>
-   <a class="text-blue-600" href="https://snow.byewind.com/">https://snow.byewind.com/</a>
-   </div>
-   <section class="">
-    <div class="flex justify-between">
-    <div class=""> 
-        <img class="w-27 " src="chatgpt-logo-02-freelogovectors.net_.png" alt="">
+
+<!-- 
+  পুরো স্ক্রিন ফ্লেক্স কন্টেইনার হিসেবে ডিজাইন করা হয়েছে, যেন ডিজাইনের কার্ড মাঝে আসে
+  flex items-center justify-center: Flexbox ঠিক মাঝখানে আনতে সাহায্য করে।
+  min-h-screen: বডি সর্বনিম্ন পুরো ভিউপোর্টের উচ্চতা জুড়ে থাকবে, যা একটি পূর্ণ-স্ক্রীন লেআউট তৈরিতে উপযোগী।
+  bg-gray-500: ব্যাকগ্রাউন্ডে একটি সুন্দর কালার এফেক্ট যোগ করে
+-->
+
+<body class="flex items-center justify-center min-h-screen bg-gray-500 p-4">
+
+  <!-- 
+      ডিজাইনের সাদা কার্ডের মত একটি কন্টেইনার 
+      w-full max-w-lg: খুব বেশি প্রসারিত না হয় এবং একটি নির্দিষ্ট সর্বোচ্চ প্রস্থ থাকে।
+      bg-white rounded-2xl: একটি পরিষ্কার সাদা ব্যাকগ্রাউন্ড এবং আরও সুন্দর, বেশি গোলাকার কর্নার দেয়।
+      shadow-lg: কার্ডে ছায়া যোগ করে, যা একটি লেয়ারড এফেক্ট তৈরি করে এবং ফ্ল্যাট ডিজাইন থেকে একটু উন্নত দেখায়।
+      space-y-36: ভেতরের উপাদানগুলোর মধ্যে পর্যাপ্ত ভার্টিকাল স্পেসিং নিশ্চিত করে। 
+  -->
+  <div class="w-full max-w-lg bg-white rounded-2xl shadow-lg p-8 space-y-36">
+    <!-- Content -->
+    <div class="flex flex-col gap-6">
+      <!-- 
+        Logo 
+        flex flex-col: উপাদানগুলোকে কলাম আকারে সাজায়, যাতে লোগো, শিরোনাম ও বর্ণনা সহজেই একটির নিচে একটি অবস্থান করে।
+        items-center: প্রতিটি উপাদানকে অনুভূমিকভাবে কেন্দ্রীভূত করে।
+        gap-2: উপাদানগুলোর মধ্যে নির্দিষ্ট স্পেসিং যোগ করে, যা কোডকে আরও পড়তে ও বুঝতে সহজ করে।
+      -->
+      <section class="flex flex-col items-center gap-2">
+        <img src="ChatGPT-Logo.png" alt="ChatGPT Logo" class="w-16 h-16">
+        <!-- Title -->
+        <h2 class="text-xl font-semibold text-gray-900 ">Welcome to ChatGPT</h2>
+        <!-- Description -->
+        <p class="text-gray-600 text-sm">Click the button below to sign in to ChatGPT.</p>
+        <!-- Sign In Button -->
+        <button class="w-full bg-black mt-4 text-white py-3 rounded-lg text-sm font-medium">
+          Sign In to ChatGPT
+        </button>
+      </section>
+      <!-- Alternative Link -->
+      <section>
+        <p class="text-xs text-gray-800">
+          If you have any trouble with the button, you can copy and paste the link below into your browser:
+        </p>
+        <!-- ডিজাইনে হালকা কালার ছিল -->
+        <a href="https://snow.byewind.com/" class="text-blue-300 text-xs block underline">https://snow.byewind.com/</a>
+      </section>
     </div>
-    <div>
-    <p class="text-[12px] text-gray-500"> +852 19850622 <br>
-        byewind@twitter.com <br>
-        snow.byewind.com
-    </p>
+
+    <!-- 
+      Footer 
+      flex-wrap: উপাদানগুলোকে একই লাইনে না গিয়ে প্রয়োজন অনুযায়ী একাধিক লাইনে সাজাতে দেয়, যা রেসপন্সিভ ডিজাইনের জন্য ভালো।
+      justify-between: প্রথম এবং শেষ উপাদানকে কন্টেইনারের দুপাশে ঠেলাঠেলি করে, বাকি জায়গায় সমান ফাঁক রাখে।
+      items-start: cross-axis (সাধারণত উল্লম্বভাবে) উপাদানগুলোকে উপরের দিকে সংযুক্ত করে।
+    -->
+    <div class="flex gap-2 flex-wrap justify-between items-start text-xs text-gray-500">
+      <div class="flex justify-center items-center space-x-2">
+        <img src="ChatGPT-Logo.png" alt="ChatGPT Logo" class="w-8 h-8">
+        <span class="text-[14px] font-bold text-gray-700">ChatGPT</span>
+      </div>
+      <div class="flex flex-wrap gap-8">
+        <div>
+          <p>+852 19850622</p>
+          <p>byewind@twitter.com</p>
+          <p>snow.byewind.com</p>
+        </div>
+        <p>One Apple Park Way<br>Cupertino, CA 95014</p>
+      </div>
     </div>
-    <div class="text-[12px] text-gray-500 ">
-        One Apple park way <br>
-        Cupertino,CA 95014
-    
-    </div>
-</div>
-   </section>
+  </div>
 </body>
+
 </html>
